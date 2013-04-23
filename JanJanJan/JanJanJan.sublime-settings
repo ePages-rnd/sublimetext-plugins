@@ -1,0 +1,80 @@
+{
+  "jr-vm-lin-1" : "/Volumes/jr-vm-lin-1/srv/epages/eproot/",
+  "jr-vm-lin-2" : "/Volumes/jr-vm-lin-2/srv/epages/eproot/",
+  "jr-vm-lin-3" : "/Volumes/jr-vm-lin-3/srv/epages/eproot/",
+  "vms" : [
+    ["jr-vm-lin-1", "/Volumes/jr-vm-lin-1/"],
+    ["jr-vm-lin-2", "/Volumes/jr-vm-lin-2/"],
+    ["jr-vm-lin-3", "/Volumes/jr-vm-lin-3/"]
+  ],
+  "vm_to_eproot" : "srv/epages/eproot/",
+  "filepath_to_vm" : "\\/Volumes\\/(.*)\\/srv\\/epages\\/.*$",
+  "filepath_to_eproot" : "\\/Volumes\\/.*\\/srv\\/epages\\/eproot/(.*)$", // used for ExecFileCommandOnVmCommand
+  "commands" : {
+    "perm_all" : {
+      "cmd" : "/etc/init.d/epages6 perm all"
+    },
+    "perm_webroot" : {
+      "cmd" : "/etc/init.d/epages6 perm webroot"
+    },
+    "perm_cartridges" : {
+      "cmd" : "/etc/init.d/epages6 perm cartridges"
+    },
+    "restart_app" : {
+      "cmd" : "/etc/init.d/epages6 start_service"
+    },
+    "restart_perl" :  {
+      "cmd" : "/etc/init.d/epages6 restart_perl"
+    },
+    "set_debug_level_0" : {
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Object/Scripts/set.pl -storename Store -path \"/\" JSDebugLevel=0"
+    },
+    "set_debug_level_1" : {
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Object/Scripts/set.pl -storename Store -path \"/\" JSDebugLevel=1"
+    },
+    "set_debug_level_2" : {
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Object/Scripts/set.pl -storename Store -path \"/\" JSDebugLevel=2"
+    }
+  },
+  "windows_commands" : {
+    "set_debug_level_0" : {
+      "cmd" : "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Object\\Scripts\\set.pl -storename Store -path \"/\" JSDebugLevel=0"
+    },
+    "set_debug_level_1" : {
+      "cmd" : "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Object\\Scripts\\set.pl -storename Store -path \"/\" JSDebugLevel=1"
+    },
+    "set_debug_level_2" : {
+      "cmd" : "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Object\\Scripts\\set.pl -storename Store -path \"/\" JSDebugLevel=2"
+    }
+  },
+  "file_commands" : {
+    "check_perl_syntax" : {
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl -c"
+    },
+    "check_js_syntax" : {
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Presentation/Scripts/checkJSSyntax.pl -type Store -warnings -file"
+    },
+    "perl_critic" : {
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Core/Scripts/critic.pl -verbose -profile /srv/epages/eproot/Cartridges/DE_EPAGES/Core/Scripts/perlcritic.conf"
+    },
+    "organize_imports" : {
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Core/Scripts/refactorCritic.pl -policy DE_EPAGES::Style::RequireCorrectImports -transform OrganizeImports -verbose"
+    },
+    "import_xml" :  {
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Object/Scripts/import.pl -storename Store"
+    },
+    "import_hook" : {
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Trigger/Scripts/import.pl -storename Store"
+    },
+    "delete_xml" : {
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Object/Scripts/delete.pl -storename Store"
+    },
+    "delete_hook" : {
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Trigger/Scripts/delete.pl -storename Store"
+    }
+  },
+  "ssh" : {
+    "command" : "ssh",
+    "path" : "/usr/bin"
+  }
+}

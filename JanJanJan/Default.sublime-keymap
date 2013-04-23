@@ -1,0 +1,10 @@
+[
+	{ 
+  		"keys": ["ctrl+shift+o"],  
+  		"command": "choose_vm",
+    	"args": {
+    		"command": "open_file_from_clipboard",
+        	"runcommand" : true
+    	} 
+	}
+]

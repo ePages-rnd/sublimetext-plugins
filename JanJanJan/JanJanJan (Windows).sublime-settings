@@ -1,0 +1,18 @@
+{
+    "C": "C:/epages/",
+    "X": "X:/",
+	"vms": [
+        [
+            "C", "Lokal"
+        ],
+
+        [
+            "X", "VM1"
+        ]
+    ],
+    "filepath_to_vm" : "^([A-Z]):.*",
+    "drive_letter_to_vm_name" : {
+    	"X" : "broddeck-vm-1"
+    },
+    "path_to_putty" : "C:\\Users\\broddeck\\Downloads\\putty"
+}

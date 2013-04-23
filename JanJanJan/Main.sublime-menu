@@ -1,0 +1,246 @@
+[
+    {
+        "id": "tools",
+        "children": [
+            {
+                "caption": "JanJanJan",
+                "children": [
+                    {
+                        "caption": "Open file from clipboard",
+                        "command": "choose_vm",
+                        "args": {
+                            "command": "open_file_from_clipboard",
+                            "runcommand": true
+                        }
+                    },
+                    {
+                        "caption": "Open file",
+                        "command": "choose_vm",
+                        "args": {
+                            "command": "open_file",
+                            "runcommand": true
+                        }
+                    },
+                    {
+                        "caption": "-"
+                    },
+                    {
+                        "caption": "CVS status",
+                        "command": "run_build",
+                        "args": {
+                            "build_system": "Packages/JanJanJan/cvs.sublime-build",
+                            "build_variant": "status"
+                        }
+                    },
+                    {
+                        "caption": "CVS diff",
+                        "command": "run_build",
+                        "args": {
+                            "build_system": "Packages/JanJanJan/cvs.sublime-build",
+                            "build_variant": "diff"
+                        }
+                    },
+                    {
+                        "caption": "CVS update",
+                        "command": "run_build",
+                        "args": {
+                            "build_system": "Packages/JanJanJan/cvs.sublime-build",
+                            "build_variant": "update"
+                        }
+                    },
+                    {
+                        "caption": "CVS get clean copy",
+                        "command": "run_build",
+                        "args": {
+                            "build_system": "Packages/JanJanJan/cvs.sublime-build",
+                            "build_variant": "get_clean_copy"
+                        }
+                    },
+                    {
+                        "caption": "-"
+                    },
+                    {
+                        "caption": "Perm webroot",
+                        "command": "choose_vm",
+                        "args": {
+                            "command": "perm_webroot"
+                        }
+                    },
+                    {
+                        "caption": "Perm cartridges",
+                        "command": "choose_vm",
+                        "args": {
+                            "command": "perm_cartridges"
+                        }
+                    },
+                    {
+                        "caption": "Perm all",
+                        "command": "choose_vm",
+                        "args": {
+                            "command": "perm_all"
+                        }
+                    },
+                    {
+                        "caption": "-"
+                    },
+                    {
+                        "caption": "Restart app",
+                        "command": "choose_vm",
+                        "args": {
+                            "command": "restart_app"
+                        }
+                    },
+                    {
+                        "caption": "Restart perl",
+                        "command": "choose_vm",
+                        "args": {
+                            "command": "restart_perl"
+                        }
+                    },
+                    {
+                        "caption": "-"
+                    },
+                    {
+                        "caption": "Set debug 2",
+                        "command": "choose_vm",
+                        "args": {
+                            "command": "set_debug_level_2"
+                        }
+                    },
+                    {
+                        "caption": "Set debug 0",
+                        "command": "choose_vm",
+                        "args": {
+                            "command": "set_debug_level_0"
+                        }
+                    },
+                    {
+                        "caption": "-"
+                    },
+                    {
+                        "caption": "Check perl syntax",
+                        "command": "exec_file_command_on_vm",
+                        "args": {
+                            "command": "check_perl_syntax"
+                        }
+                    },
+                    {
+                        "caption": "Check javascript syntax",
+                        "command": "exec_file_command_on_vm",
+                        "args": {
+                            "command": "check_js_syntax"
+                        }
+                    },
+                    {
+                        "caption": "-"
+                    },
+                    {
+                        "caption": "Perl critic",
+                        "command": "exec_file_command_on_vm",
+                        "args": {
+                            "command": "perl_critic"
+                        }
+                    },
+                    {
+                        "caption": "Organize imports",
+                        "command": "exec_file_command_on_vm",
+                        "args": {
+                            "command": "organize_imports"
+                        }
+                    },
+                    {
+                        "caption": "-"
+                    },
+                    {
+                        "caption": "Import xml",
+                        "command": "exec_file_command_on_vm",
+                        "args": {
+                            "command": "import_xml"
+                        }
+                    },
+                    {
+                        "caption": "Import hook",
+                        "command": "exec_file_command_on_vm",
+                        "args": {
+                            "command": "import_hook"
+                        }
+                    },
+                    {
+                        "caption": "-"
+                    },
+                    {
+                        "caption": "Delete xml",
+                        "command": "exec_file_command_on_vm",
+                        "args": {
+                            "command": "delete_xml"
+                        }
+                    },
+                    {
+                        "caption": "Delete hook",
+                        "command": "exec_file_command_on_vm",
+                        "args": {
+                            "command": "delete_hook"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children": [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children": [
+                    {
+                        "caption": "JanJanJan",
+                        "children": [
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/JanJanJan/JanJanJan.sublime-settings"
+                                },
+                                "caption": "Settings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/JanJanJan/JanJanJan (Windows).sublime-settings"
+                                },
+                                "caption": "Settings – Default (Windows)"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/JanJanJan ($platform).sublime-settings"
+                                },
+                                "caption": "Settings – User"
+                            },
+                            {
+                                "caption": "-"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/JanJanJan/Default.sublime-keymap"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default ($platform).sublime-keymap"
+                                },
+                                "caption": "Key Bindings – User"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
