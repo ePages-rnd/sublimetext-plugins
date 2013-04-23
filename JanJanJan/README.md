@@ -9,6 +9,7 @@ JanJanJan
 - [Configuration](#configuration)
   - [Windows](#windows)
   - [Unix](#unix)
+- [Features](#features)
 
 
 Installation
@@ -65,5 +66,36 @@ Edit User Settings:
   // regex matching a filepath to a relative filepath, i.e. relative to eproot.
 }
 ```
+
+Features
+--------
+### Quick CVS
+Runs **cvs** on your console and prints output to Sublime Text console.
+* Status
+* Diff
+* Update
+* Get Clean Copy
+
+### Epages commands
+Runs epages commands on virtual machine (or locally on windows, if applicable)
+* perm_all
+* perm_webroot
+* perm_cartridges
+* restart_app
+* restart_perl
+* set_debug_level_2
+* check_perl_syntax
+* check_js_syntax
+* perl_critic
+* organize_imports
+* import_xml
+* import_hook 
+* delete_xml
+* delete_hook
+* ... see JanJanJan.sublime-settings
+
+### Useful helpers
+* open file on vm
+* open error/debug/... log
 
 
