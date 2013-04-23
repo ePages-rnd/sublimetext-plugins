@@ -1,8 +1,5 @@
 [
    { "caption": "-" },
-   { "caption": "Check syntax", "command": "check_syntax" },
-   { "caption": "Restart epages6 application server", "command": "restart_app" },
-   { "caption": "Restart perl", "command": "restart_perl" },
    { "caption": "Open containing folder in cvs...", "command": "open_cvs" },
    { "caption": "CVS Update", "command": "cvs_update" },
    { "caption": "-" },

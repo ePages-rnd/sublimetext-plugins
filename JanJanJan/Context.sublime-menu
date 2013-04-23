@@ -1,0 +1,15 @@
+[
+    {
+        "caption": "-"
+    },
+    {
+        "caption": "Open file from clipboard",
+        "command": "run_command_with_vm",
+        "args": {
+            "command": "open_file_from_clipboard"
+        }
+    },
+    {
+        "caption": "-"
+    }
+]

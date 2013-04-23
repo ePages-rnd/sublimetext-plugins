@@ -1,0 +1,1 @@
+/etc/init.d/epages6 perm cartridges

@@ -12,40 +12,6 @@
                         "caption": "Open containing folder in cvs",
                         "command": "open_cvs"
                     },
-                    {
-                        "caption": "Restart application server",
-                        "command": "restart_app"
-                    },
-                    {
-                        "caption": "Restart perl",
-                        "command": "restart_perl"
-                    },
-                    {
-                        "caption": "Set DebugLevel 0",
-                        "command": "set_debug_level",
-                        "args"   : {
-                            "lvl" : "0"
-                        }
-                    },
-                    {
-                        "caption": "Set DebugLevel 1",
-                        "command": "set_debug_level",
-                        "args"   : {
-                            "lvl" : "1"
-                        }
-                    },
-                    {
-                        "caption": "Set DebugLevel 2",
-                        "command": "set_debug_level",
-                        "args"   : {
-                            "lvl" : "2"
-                        }
-                    },
-                    { "caption": "-" },
-                    /*{
-                        "caption": "Open file on consulting vm",
-                        "command": "open_file_on_cs_vm"
-                    },*/
                     { "command": "task_choose" },
                     {
                         "caption": "Open File(s)...",
@@ -62,53 +28,6 @@
                     {
                         "caption": "View Task Configuration",
                         "command": "task_open_task_file"
-                    },
-                    { "caption": "-" },
-                    {
-                        "caption": "Open error log",
-                        "command": "open_error_log"
-                    },
-                    {
-                        "caption": "Open debug log",
-                        "command": "open_debug_log"
-                    },
-                    {
-                        "caption": "Open template",
-                        "command": "open_template"
-                    },
-                    { "caption": "-" },
-                    {
-                        "caption": "Check syntax",
-                        "command": "check_syntax"
-                    },
-                    {
-                        "caption": "Perl::Critic",
-                        "command": "perl_critic"
-                    },
-                    {
-                        "caption": "Organize imports",
-                        "command": "organize_imports"
-                    },
-                    {
-                        "caption": "Correct permissions",
-                        "command": "correct_permissions"
-                    },
-                    { "caption": "-" },
-                    {
-                        "caption": "Import XML",
-                        "command": "import"
-                    },
-                    {
-                        "caption": "Import hook XML",
-                        "command": "import_hook"
-                    },
-                    {
-                        "caption": "Delete XML",
-                        "command": "delete"
-                    },
-                    {
-                        "caption": "Delete hook XML",
-                        "command": "delete_hook"
                     }
                 ]
             }

@@ -1,0 +1,1 @@
+/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Object/Scripts/set.pl -storename Store -path "/" JSDebugLevel=1

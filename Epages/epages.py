@@ -46,35 +46,6 @@ class ep_on_post_save(sublime_plugin.EventListener):
         elif output["status"] == "updated":
             self.view.set_status("cvs_1",  "*** Updated ***")
 
-
-
-class OpenErrorLogCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        filename = self.window.active_view().file_name()
-        log = action.log(filename, "error")
-        if log == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            self.window.open_file(log)
-
-class OpenDebugLogCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        filename = self.window.active_view().file_name()
-        log = action.log(filename, "dev")
-        if log == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            self.window.open_file(log)
-
-class CheckSyntaxCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        filename = self.window.active_view().file_name()
-        result = action.check_syntax(filename)
-        if result == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            sublime.message_dialog(result)
-
 class OpenCvsCommand(sublime_plugin.WindowCommand):
     def run(self, paths=None):
         if paths:
@@ -84,116 +55,6 @@ class OpenCvsCommand(sublime_plugin.WindowCommand):
         cvs = action.cvs(filename)
         if cvs == "error":
             sublime.error_message("Not an epages6 folder")
-
-class CorrectPermissionsCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        filename = self.window.active_view().file_name()
-        result = action.correct_permissions(filename)
-        if result == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            sublime.message_dialog("Permissions corrected!")
-
-class RestartAppCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        filename = self.window.active_view().file_name()
-        result = action.restart_app(filename)
-        if result == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            sublime.message_dialog("AppServer restarted!")
-
-class SetDebugLevel(sublime_plugin.WindowCommand):
-    def run(self, lvl):
-        filename = self.window.active_view().file_name()
-        result = action.set_debug(filename, lvl)
-        if result == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            sublime.message_dialog("DebugLvl "+ lvl + "!")
-
-class RestartPerlCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        filename = self.window.active_view().file_name()
-        action.restart_perl(filename, self.restart_result)
-
-
-    def restart_result(self, result):
-        self.result = result
-        sublime.set_timeout(self.display_result, 0)
-
-    def display_result(self):
-        if self.result == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            sublime.message_dialog("Perl restarted!")
-
-class PerlCriticCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        filename = self.window.active_view().file_name()
-        result = action.perl_critic(filename)
-        if result == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            print(result)
-            sublime.message_dialog(result)
-
-class OrganizeImportsCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        filename = self.window.active_view().file_name()
-        result = action.organize_imports(filename)
-        if result == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            sublime.message_dialog("Imports organized")
-
-class ImportCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        filename = self.window.active_view().file_name()
-        result = action.import_xml(filename)
-        if result == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            sublime.message_dialog("XML imported")
-
-class DeleteCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        filename = self.window.active_view().file_name()
-        result = action.delete_xml(filename)
-        if result == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            sublime.message_dialog("XML deleted")
-
-class ImportHookCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        filename = self.window.active_view().file_name()
-        result = action.import_hook(filename)
-        if result == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            sublime.message_dialog("Hook imported")
-
-class DeleteHookCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        filename = self.window.active_view().file_name()
-        result = action.delete_hook(filename)
-        if result == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            sublime.message_dialog("Hook deleted")
-
-class OpenTemplateCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        self.window.show_input_panel("Paste template here", "", self.on_done, None, None)
-
-    def on_done(self, template_string):
-        filename = self.window.active_view().file_name()
-        template = action.template(filename, template_string)
-        if template == "error":
-            sublime.error_message("Not an epages6 folder")
-        else:
-            self.window.open_file(template)
 
 class TaskChooseCommand(sublime_plugin.WindowCommand):
 
@@ -278,7 +139,6 @@ class TaskListFilesCommand(sublime_plugin.WindowCommand):
         elif i == len(self.filelist):
             for f in self.filelist:
                 self.window.open_file(f[1])
-
 
     def is_visible(self):
         taskname = tasks.get_current_task()
