@@ -47,6 +47,16 @@
       "cmd" : "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Object\\Scripts\\set.pl -storename Store -path \"/\" JSDebugLevel=2"
     }
   },
+  "windows_file_commands" : {
+    "import_xml" : {"cmd": "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Object\\Scripts\\import.pl -storename Store"},
+    "import_hook" :{"cmd": "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Trigger\\Scripts\\import.pl -storename Store"},
+    "delete_xml" : {"cmd": "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Object\\Scripts\\delete.pl -storename Store"},
+    "delete_hook" : {"cmd": "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Trigger\\Scripts\\delete.pl -storename Store"},
+    "perl_critic" : {"cmd": "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Core\\Scripts\\critic.pl -verbose -profile C:\\epages\\Cartridges\\DE_EPAGES\\Core\\Scripts\\perlcritic.conf"},
+    "check_js_syntax" : {"cmd": "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Presentation\\Scripts\\checkJSSyntax.pl -type Store -warnings -file"},
+    "check_perl_syntax" : {"cmd": "C:\\epages\\Perl\\bin\\perl.exe"},
+    "organize_imports" : {"cmd": "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Core\\Scripts\\refactorCritic.pl -policy DE_EPAGES::Style::RequireCorrectImports -transform OrganizeImports -verbose"}
+  },
   "file_commands" : {
     "check_perl_syntax" : {
       "cmd" : "/srv/epages/eproot/Perl/bin/perl -c"

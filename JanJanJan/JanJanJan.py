@@ -36,40 +36,50 @@ class ExecFileCommandOnVmCommand(sublime_plugin.WindowCommand):
     # under the *file_commands* key on the given virtual machine via ssh
     # appending the filepath to the command
     def run(self, command, args={}):
-        filepath_to_vm = sublime.load_settings("JanJanJan.sublime-settings").get("filepath_to_vm")
-        m = re.compile(filepath_to_vm).match(self.window.active_view().file_name())
-        filepath_to_eproot = sublime.load_settings("JanJanJan.sublime-settings").get("filepath_to_eproot")
-        n = re.compile(filepath_to_eproot).match(self.window.active_view().file_name())
-        if m:
-            if n:
-                fileCommands = sublime.load_settings("JanJanJan.sublime-settings").get("file_commands", {})
-                if fileCommands[command]:
-                    sshSettings = sublime.load_settings("JanJanJan.sublime-settings").get("ssh", {
-                        "command" : "ssh",
-                        "path" : "/usr/bin"
-                    })
-                    cmd = []
-                    if sshSettings["command"]:
-                        cmd.append(sshSettings["command"])
-                    else:
-                        cmd.append("ssh")
-                    cmd.append("root@" + m.group(1))
-                    cmd.append(fileCommands[command]["cmd"] + " /srv/epages/eproot/" + n.group(1))
-                    if sshSettings["path"]:
-                        self.window.run_command("exec",{
-                            "cmd" : cmd,
-                            "path" : sshSettings["path"]
-                        })
-                    else:
-                        self.window.run_command("exec",{
-                            "cmd" : cmd
-                        })
-                else:
-                    sublime.error_message("Cannot find file_command " + command + "in JanJanJan settings.")
-            else:
-                sublime.error_message("Cannot guess filepath (relative to the virtual machine) from: " + self.window.active_view().file_name())
+        if sublime.platform() == "windows":
+            filepath_to_vm = sublime.load_settings("JanJanJan.sublime-settings").get("filepath_to_vm")
+            m = re.compile(filepath_to_vm).match(self.window.active_view().file_name())
+            vm = m.group(1)
+            if vm == "C":
+                windowsFileCommands = sublime.load_settings("JanJanJan.sublime-settings").get("windows_file_commands", {})
+                self.window.run_command("exec",{
+                    "cmd" : windowsFileCommands[command]["cmd"] + " " + self.window.active_view().file_name()
+                })
         else:
-            sublime.error_message("Cannot guess virtual machine from: " + self.window.active_view().file_name())
+            filepath_to_vm = sublime.load_settings("JanJanJan.sublime-settings").get("filepath_to_vm")
+            m = re.compile(filepath_to_vm).match(self.window.active_view().file_name())
+            filepath_to_eproot = sublime.load_settings("JanJanJan.sublime-settings").get("filepath_to_eproot")
+            n = re.compile(filepath_to_eproot).match(self.window.active_view().file_name())
+            if m:
+                if n:
+                    fileCommands = sublime.load_settings("JanJanJan.sublime-settings").get("file_commands", {})
+                    if fileCommands[command]:
+                        sshSettings = sublime.load_settings("JanJanJan.sublime-settings").get("ssh", {
+                            "command" : "ssh",
+                            "path" : "/usr/bin"
+                        })
+                        cmd = []
+                        if sshSettings["command"]:
+                            cmd.append(sshSettings["command"])
+                        else:
+                            cmd.append("ssh")
+                        cmd.append("root@" + m.group(1))
+                        cmd.append(fileCommands[command]["cmd"] + " /srv/epages/eproot/" + n.group(1))
+                        if sshSettings["path"]:
+                            self.window.run_command("exec",{
+                                "cmd" : cmd,
+                                "path" : sshSettings["path"]
+                            })
+                        else:
+                            self.window.run_command("exec",{
+                                "cmd" : cmd
+                            })
+                    else:
+                        sublime.error_message("Cannot find file_command " + command + "in JanJanJan settings.")
+                else:
+                    sublime.error_message("Cannot guess filepath (relative to the virtual machine) from: " + self.window.active_view().file_name())
+            else:
+                sublime.error_message("Cannot guess virtual machine from: " + self.window.active_view().file_name())
 
 class ExecCommandOnVmCommand(sublime_plugin.WindowCommand):
     # Executes a *command* defined in "JanJanJan.sublime-settings" 
