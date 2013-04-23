@@ -28,7 +28,7 @@ See the **README.md** inside the plugin folders for personal settings you may ha
 
 Plugins
 --------
-### JanJanJan
+### [JanJanJan](JanJanJan/)
 Basic functionality for working with virtual machines running epages on unix and windows, e.g.
 * Open file (e.g. copy template debugging comment -> strg+shift+o in Sublime Text -> opens file on your system).
 * Restart app server.
@@ -44,7 +44,7 @@ Basic functionality for working with virtual machines running epages on unix and
 * Correct permissions.
 * ...
 
-### Epages
+### [Epages](Epages/)
 More integrated **cvs** and **task-managment** implementation, e.g.
 * Open in CVS GUI
 * Log, StackTrace snippet for Perl files
