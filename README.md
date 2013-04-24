@@ -9,12 +9,13 @@ sublimetext-plugins
 - [Configuration](#configuration)
 - [Plugins](#plugins)
   - [JanJanJan](#janjanjan)
+  - [QuickCVS](#quickcvs)
   - [Epages](#epages)
 - [Notes on Development](#development)
 
 Installation
 ------------
-Currently the plugins are **not** available through [Sublime Package Contol](http://wbond.net/sublime_packages/package_control). 
+Currently the plugins are **not** available through [Sublime Package Contol](http://wbond.net/sublime_packages/package_control).
 So you have to manually copy the desired plugins (i.e. folders in this repository) to your Packages directory. In Sublime Text:
 
 * Click the **Preferences > Browse Packages…** menu entry.
@@ -30,13 +31,13 @@ Plugins
 --------
 ### [JanJanJan](JanJanJan/)
 Basic functionality for working with virtual machines running epages on unix and windows, e.g.
+
 * Open file (e.g. copy template debugging comment -> strg+shift+o in Sublime Text -> opens file on your system).
 * Restart app server.
 * Restart perl.
 * Set JSDebugLevel.
 * Import and delete XMLs.
 * Import and delete hook XMLs.
-* Ctags perl (Linux only, requires ctags plugin).
 * Perl::Critic.
 * Perl syntax check.
 * Javascript syntax check.
@@ -44,11 +45,21 @@ Basic functionality for working with virtual machines running epages on unix and
 * Correct permissions.
 * ...
 
+### [QuickCVS](QuickCVS/)
+Runs **cvs** on your console and prints output to Sublime Text console.
+
+* Status
+* Diff
+* Update
+* Get Clean Copy
+
 ### [Epages](Epages/)
 More integrated **cvs** and **task-managment** implementation, e.g.
+
 * Open in CVS GUI
 * Log, StackTrace snippet for Perl files
 * virtual folders (summarize files to virtual folders/tasks)
+* Ctags perl (Linux only, requires ctags plugin).
 * ...
 
 Development
