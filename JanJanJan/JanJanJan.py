@@ -22,7 +22,7 @@ class ChooseVmCommand(sublime_plugin.WindowCommand):
         self.command = command
         self.args = args
         self.runcommand = runcommand
-        self.window.show_quick_panel(sublime.load_settings("JanJanJan.sublime-settings").get("vms"), self.on_done, sublime.MONOSPACE_FONT)
+        self.window.show_quick_panel(sublime.load_settings("JanJanJan.sublime-settings").get("vms", []), self.on_done, sublime.MONOSPACE_FONT)
     def on_done(self, index):
         if index > -1:
             self.window.run_command("run_command_with_vm" if self.runcommand else "exec_command_on_vm", {
@@ -42,9 +42,10 @@ class ExecFileCommandOnVmCommand(sublime_plugin.WindowCommand):
             vm = m.group(1)
             if vm == "C":
                 windowsFileCommands = sublime.load_settings("JanJanJan.sublime-settings").get("windows_file_commands", {})
-                self.window.run_command("exec",{
-                    "cmd" : windowsFileCommands[command]["cmd"] + " " + self.window.active_view().file_name()
-                })
+                if windowsFileCommands.get(command):
+                    self.window.run_command("exec",{
+                        "cmd" : windowsFileCommands[command].get("cmd", "") + " " + self.window.active_view().file_name()
+                    })
         else:
             filepath_to_vm = sublime.load_settings("JanJanJan.sublime-settings").get("filepath_to_vm")
             m = re.compile(filepath_to_vm).match(self.window.active_view().file_name())
@@ -53,27 +54,31 @@ class ExecFileCommandOnVmCommand(sublime_plugin.WindowCommand):
             if m:
                 if n:
                     fileCommands = sublime.load_settings("JanJanJan.sublime-settings").get("file_commands", {})
-                    if fileCommands[command]:
+                    if fileCommands.get(command):
                         sshSettings = sublime.load_settings("JanJanJan.sublime-settings").get("ssh", {
                             "command" : "ssh",
                             "path" : "/usr/bin"
                         })
                         cmd = []
-                        if sshSettings["command"]:
-                            cmd.append(sshSettings["command"])
-                        else:
-                            cmd.append("ssh")
+                        cmd.append(sshSettings.get("command", "ssh"))
                         cmd.append("root@" + m.group(1))
-                        cmd.append(fileCommands[command]["cmd"] + " /srv/epages/eproot/" + n.group(1))
-                        if sshSettings["path"]:
-                            self.window.run_command("exec",{
-                                "cmd" : cmd,
+                        cmd.append(fileCommands[command].get("cmd", "") + " /srv/epages/eproot/" + n.group(1))
+                        execDict = {
+                            "cmd" : cmd
+                        }
+                        if sshSettings.get("path"):
+                            execDict.update({
                                 "path" : sshSettings["path"]
                             })
-                        else:
-                            self.window.run_command("exec",{
-                                "cmd" : cmd
+                        if vmCommands.get(command).get("file_regex"):
+                            execDict.update({
+                                "file_regex" : vmCommands[command]["file_regex"]  
                             })
+                        if vmCommands.get(command).get("line_regex"):
+                            execDict.update({
+                                "line_regex" : vmCommands[command]["line_regex"]  
+                            })
+                        self.window.run_command("exec", execDict)
                     else:
                         sublime.error_message("Cannot find file_command " + command + "in JanJanJan settings.")
                 else:
@@ -89,45 +94,53 @@ class ExecCommandOnVmCommand(sublime_plugin.WindowCommand):
             if sublime.platform() == "windows":
                 if vm == "C":
                     windowsCommands = sublime.load_settings("JanJanJan.sublime-settings").get("windows_commands", {})
-                    self.window.run_command("exec",{
-                        "cmd" : windowsCommands[command]["cmd"]
-                    })
+                    if windowsFileCommands.get(command):
+                        self.window.run_command("exec",{
+                            "cmd" : windowsCommands[command]["cmd"]
+                        })
                 else:
-                    vmName = sublime.load_settings("JanJanJan.sublime-settings").get("drive_letter_to_vm_name", {})[vm]
-                    pathToPutty = sublime.load_settings("JanJanJan.sublime-settings").get("path_to_putty")
+                    vmName = sublime.load_settings("JanJanJan.sublime-settings").get("drive_letter_to_vm_name", {}).get(vm, vm)
+                    pathToPutty = sublime.load_settings("JanJanJan.sublime-settings").get("path_to_putty", "")
                     self.window.run_command('exec',{
                         'cmd':[pathToPutty, '-load', vmName, '-m', sublime.packages_path() + '\\JanJanJan\\' + command + '.sh']
                     })
             else:    
                 vmCommands = sublime.load_settings("JanJanJan.sublime-settings").get("commands", {})
-                if vmCommands[command]:
+                if vmCommands.get(command):
                     sshSettings = sublime.load_settings("JanJanJan.sublime-settings").get("ssh", {
                         "command" : "ssh",
                         "path" : "/usr/bin"
                     })
                     cmd = []
-                    if sshSettings["command"]:
-                        cmd.append(sshSettings["command"])
-                    else:
-                        cmd.append("ssh")
+                    cmd.append(sshSettings.get("command", "ssh"))
                     cmd.append("root@" + vm)
-                    cmd.append(vmCommands[command]["cmd"])
-                    if sshSettings["path"]:
-                        self.window.run_command("exec",{
-                            "cmd" : cmd,
+                    cmd.append(vmCommands[command].get("cmd", ""))
+                    execDict = {
+                        "cmd" : cmd
+                    }
+                    if sshSettings.get("path"):
+                        execDict.update({
                             "path" : sshSettings["path"]
                         })
-                    else:
-                        self.window.run_command("exec",{
-                            "cmd" : cmd
+                    if vmCommands.get(command).get("file_regex"):
+                        execDict.update({
+                            "file_regex" : vmCommands[command]["file_regex"]  
                         })
+                    if vmCommands.get(command).get("line_regex"):
+                        execDict.update({
+                            "line_regex" : vmCommands[command]["line_regex"]  
+                        })
+                    self.window.run_command("exec", execDict)
         else:
             filepath_to_vm = sublime.load_settings("JanJanJan.sublime-settings").get("filepath_to_vm")
             m = re.compile(filepath_to_vm).match(self.window.active_view().file_name())
             if m:
                 self.run(command, args, m.group(1))
             else:
-                self.window.run_command("choose_vm", {"command":command, "args":args})
+                self.window.run_command("choose_vm", {
+                    "command" : command, 
+                    "args" : args
+                })
 
 class RunCommandWithVmCommand(sublime_plugin.WindowCommand):
     # Adapter for running window commands
@@ -136,14 +149,21 @@ class RunCommandWithVmCommand(sublime_plugin.WindowCommand):
     # will be run to find a *vm*.
     def run(self, command, args={}, vm=""):
         if vm:
-            self.window.run_command(command + '_on_vm', {"vm": vm, "args" : args})
+            self.window.run_command(command + '_on_vm', {
+                "vm": vm, 
+                "args" : args
+            })
         else:
             filepath_to_vm = sublime.load_settings("JanJanJan.sublime-settings").get("filepath_to_vm")
             m = re.compile(filepath_to_vm).match(self.window.active_view().file_name())
             if m:
                 self.run(command, args, m.group(1))
             else:
-                self.window.run_command("choose_vm", {"command":command, "args":args, "runcommand":True})
+                self.window.run_command("choose_vm", {
+                    "command" : command, 
+                    "args" : args, 
+                    "runcommand" : True
+                })
 
 class OpenFileOnVmCommand(sublime_plugin.WindowCommand):
     def run(self, vm, template_string="", args={}):
