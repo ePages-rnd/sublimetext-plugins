@@ -2,17 +2,17 @@ import sublime, sublime_plugin
 import re
 
 class RunBuildCommand(sublime_plugin.WindowCommand):
-    # helper 
+    # helper
     #  * for setting the build_system
     #  * running build
     #  * and then resetting the build_system to automatic
-    def run(self, build_system, build_variant):  
+    def run(self, build_system, build_variant):
         self.window.run_command( "set_build_system", {"file": build_system } )
         self.window.run_command( "build", {
             "variant": build_variant
         })
         self.window.run_command("set_build_system", {"file":""}) # Set build_system to *automatic*
-        
+
 class ChooseVmCommand(sublime_plugin.WindowCommand):
     # Choose virtual machine according to "vms" array
     # in "JanJanJan.sublime-settings".
@@ -26,13 +26,13 @@ class ChooseVmCommand(sublime_plugin.WindowCommand):
     def on_done(self, index):
         if index > -1:
             self.window.run_command("run_command_with_vm" if self.runcommand else "exec_command_on_vm", {
-                "command":self.command, 
+                "command":self.command,
                 "vm":sublime.load_settings("JanJanJan.sublime-settings").get("vms")[index][0],
                 "args":self.args
             })
 
 class ExecFileCommandOnVmCommand(sublime_plugin.WindowCommand):
-    # Executes a *command* defined in "JanJanJan.sublime-settings" 
+    # Executes a *command* defined in "JanJanJan.sublime-settings"
     # under the *file_commands* key on the given virtual machine via ssh
     # appending the filepath to the command
     def run(self, command, args={}):
@@ -70,13 +70,13 @@ class ExecFileCommandOnVmCommand(sublime_plugin.WindowCommand):
                             execDict.update({
                                 "path" : sshSettings["path"]
                             })
-                        if vmCommands.get(command).get("file_regex"):
+                        if fileCommands.get(command).get("file_regex"):
                             execDict.update({
-                                "file_regex" : vmCommands[command]["file_regex"]  
+                                "file_regex" : fileCommands[command]["file_regex"]
                             })
-                        if vmCommands.get(command).get("line_regex"):
+                        if fileCommands.get(command).get("line_regex"):
                             execDict.update({
-                                "line_regex" : vmCommands[command]["line_regex"]  
+                                "line_regex" : fileCommands[command]["line_regex"]
                             })
                         self.window.run_command("exec", execDict)
                     else:
@@ -87,7 +87,7 @@ class ExecFileCommandOnVmCommand(sublime_plugin.WindowCommand):
                 sublime.error_message("Cannot guess virtual machine from: " + self.window.active_view().file_name())
 
 class ExecCommandOnVmCommand(sublime_plugin.WindowCommand):
-    # Executes a *command* defined in "JanJanJan.sublime-settings" 
+    # Executes a *command* defined in "JanJanJan.sublime-settings"
     # under the *commands* key on the given virtual machine via ssh.
     def run(self, command, args={}, vm=""):
         if vm:
@@ -104,7 +104,7 @@ class ExecCommandOnVmCommand(sublime_plugin.WindowCommand):
                     self.window.run_command('exec',{
                         'cmd':[pathToPutty, '-load', vmName, '-m', sublime.packages_path() + '\\JanJanJan\\' + command + '.sh']
                     })
-            else:    
+            else:
                 vmCommands = sublime.load_settings("JanJanJan.sublime-settings").get("commands", {})
                 if vmCommands.get(command):
                     sshSettings = sublime.load_settings("JanJanJan.sublime-settings").get("ssh", {
@@ -124,11 +124,11 @@ class ExecCommandOnVmCommand(sublime_plugin.WindowCommand):
                         })
                     if vmCommands.get(command).get("file_regex"):
                         execDict.update({
-                            "file_regex" : vmCommands[command]["file_regex"]  
+                            "file_regex" : vmCommands[command]["file_regex"]
                         })
                     if vmCommands.get(command).get("line_regex"):
                         execDict.update({
-                            "line_regex" : vmCommands[command]["line_regex"]  
+                            "line_regex" : vmCommands[command]["line_regex"]
                         })
                     self.window.run_command("exec", execDict)
         else:
@@ -138,7 +138,7 @@ class ExecCommandOnVmCommand(sublime_plugin.WindowCommand):
                 self.run(command, args, m.group(1))
             else:
                 self.window.run_command("choose_vm", {
-                    "command" : command, 
+                    "command" : command,
                     "args" : args
                 })
 
@@ -150,7 +150,7 @@ class RunCommandWithVmCommand(sublime_plugin.WindowCommand):
     def run(self, command, args={}, vm=""):
         if vm:
             self.window.run_command(command + '_on_vm', {
-                "vm": vm, 
+                "vm": vm,
                 "args" : args
             })
         else:
@@ -160,8 +160,8 @@ class RunCommandWithVmCommand(sublime_plugin.WindowCommand):
                 self.run(command, args, m.group(1))
             else:
                 self.window.run_command("choose_vm", {
-                    "command" : command, 
-                    "args" : args, 
+                    "command" : command,
+                    "args" : args,
                     "runcommand" : True
                 })
 
