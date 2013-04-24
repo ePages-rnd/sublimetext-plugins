@@ -54,8 +54,7 @@ Runs **cvs** on your console and prints output to Sublime Text console.
 * Get Clean Copy
 
 ### [Epages](Epages/) 
-**currently unstable**
-More integrated **cvs** and **task-managment** implementation, e.g.
+**currently unstable**. More some **cvs** and **task-managment** implementation, e.g.
 
 * Open in CVS GUI
 * Log, StackTrace snippet for Perl files
