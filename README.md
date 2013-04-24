@@ -53,7 +53,7 @@ Runs **cvs** on your console and prints output to Sublime Text console.
 * Update
 * Get Clean Copy
 
-### [Epages](Epages/)
+### [Epages](Epages/) **currently unstable**
 More integrated **cvs** and **task-managment** implementation, e.g.
 
 * Open in CVS GUI
