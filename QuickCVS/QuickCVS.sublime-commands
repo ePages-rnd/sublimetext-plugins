@@ -8,6 +8,14 @@
         }
     },
     {
+        "caption": "Quick CVS: commit current file",
+        "command": "run_build_cvs",
+        "args" : {
+            "build_system" : "Packages/QuickCVS/CVS.sublime-build",
+            "build_variant" :"commit"
+        }
+    },
+    {
         "caption": "Quick CVS: update",
         "command": "run_build_cvs",
         "args" : {
