@@ -8,10 +8,8 @@ This plugin is the QuickCVS extract taken from the original [JanJanJan](JanJanJa
 ---
 
 - [Installation](#installation)
-- [Configuration](#configuration)
-  - [Windows](#windows)
-  - [Unix](#unix)
 - [Features](#features)
+- [Development](#development)
 
 
 Installation
@@ -31,6 +29,7 @@ Runs **cvs** on your console and prints output to Sublime Text console.
 * Diff
 * Update
 * Get Clean Copy
+
 
 Development
 -----------
