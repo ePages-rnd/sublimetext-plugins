@@ -1,0 +1,33 @@
+{
+	"cmd": [
+	  "cvs",
+	  "--help"
+	],
+	"working_dir": "$file_path",
+	"windows" : {
+		"path":"C:\\Program Files (x86)\\cvsnt;"
+	},
+	"osx" : {
+		"path": "/Applications/Xcode.app/Contents/Developer/usr/bin"
+	},
+	"variants": [
+		{
+			"name" : "update",
+			"cmd": ["cvs", "update", "$file_name"]
+		},
+		{
+			"name" : "get_clean_copy",
+			"cmd": ["cvs", "update", "-C","$file_name"]
+		},
+		{
+			"name" : "diff",
+			"cmd": ["cvs", "diff", "$file_name"],
+			"file_regex": "Index\\: (.*)$",
+			"line_regex": "^([0-9]+)[^0-9]*" 
+		},
+		{
+			"name" : "status",
+			"cmd": ["cvs", "status", "$file_name"]
+		}
+	]
+}

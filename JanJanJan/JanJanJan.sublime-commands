@@ -1,37 +1,5 @@
 [
     {
-        "caption": "Quick CVS: diff",
-        "command": "run_build", 
-        "args" : {
-            "build_system" : "Packages/JanJanJan/cvs.sublime-build", 
-            "build_variant" :"diff"
-        }
-    },
-    {
-        "caption": "Quick CVS: update",
-        "command": "run_build", 
-        "args" : {
-            "build_system" : "Packages/JanJanJan/cvs.sublime-build", 
-            "build_variant" :"update"
-        }
-    },
-    {
-        "caption": "Quick CVS: get clean copy",
-        "command": "run_build", 
-        "args" : {
-            "build_system" : "Packages/JanJanJan/cvs.sublime-build", 
-            "build_variant" :"get_clean_copy"
-        }
-    },
-    {
-        "caption": "Quick CVS: status",
-        "command": "run_build", 
-        "args" : {
-            "build_system" : "Packages/JanJanJan/cvs.sublime-build", 
-            "build_variant" :"status"
-        }
-    },
-    {
         "caption": "Epages: Set debug level 0",
         "command": "exec_command_on_vm",
         "args": {
@@ -105,7 +73,7 @@
         "caption": "Epages: Open error.log",
         "command": "run_command_with_vm",
         "args": {
-            "command": "open_log", 
+            "command": "open_log",
             "args": {
                 "name": "error"
             }
@@ -115,7 +83,7 @@
         "caption": "Epages: Open debug.log",
         "command": "run_command_with_vm",
         "args": {
-            "command": "open_log", 
+            "command": "open_log",
             "args": {
                 "name": "debug"
             }
@@ -125,7 +93,7 @@
         "caption": "Epages: Open userfault.log",
         "command": "run_command_with_vm",
         "args": {
-            "command": "open_log", 
+            "command": "open_log",
             "args" : {
                 "name":"userfault"
             }
@@ -207,7 +175,7 @@
         "caption": "Choose VM: Open error.log",
         "command": "choose_vm",
         "args": {
-            "command": "open_log", 
+            "command": "open_log",
             "args": {
                 "name": "error"
             },
@@ -218,7 +186,7 @@
         "caption": "Choose VM: Open debug.log",
         "command": "choose_vm",
         "args": {
-            "command": "open_log", 
+            "command": "open_log",
             "args": {
                 "name": "debug"
             },
@@ -229,7 +197,7 @@
         "caption": "Choose VM: Open userfault.log",
         "command": "choose_vm",
         "args": {
-            "command": "open_log", 
+            "command": "open_log",
             "args" : {
                 "name":"userfault"
             },

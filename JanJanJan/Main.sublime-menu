@@ -25,41 +25,6 @@
                         "caption": "-"
                     },
                     {
-                        "caption": "CVS status",
-                        "command": "run_build",
-                        "args": {
-                            "build_system": "Packages/JanJanJan/cvs.sublime-build",
-                            "build_variant": "status"
-                        }
-                    },
-                    {
-                        "caption": "CVS diff",
-                        "command": "run_build",
-                        "args": {
-                            "build_system": "Packages/JanJanJan/cvs.sublime-build",
-                            "build_variant": "diff"
-                        }
-                    },
-                    {
-                        "caption": "CVS update",
-                        "command": "run_build",
-                        "args": {
-                            "build_system": "Packages/JanJanJan/cvs.sublime-build",
-                            "build_variant": "update"
-                        }
-                    },
-                    {
-                        "caption": "CVS get clean copy",
-                        "command": "run_build",
-                        "args": {
-                            "build_system": "Packages/JanJanJan/cvs.sublime-build",
-                            "build_variant": "get_clean_copy"
-                        }
-                    },
-                    {
-                        "caption": "-"
-                    },
-                    {
                         "caption": "Perm webroot",
                         "command": "choose_vm",
                         "args": {
@@ -216,7 +181,7 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/User/JanJanJan.sublime-settings"
+                                    "file": "${packages}/User/JanJanJan ($platform).sublime-settings"
                                 },
                                 "caption": "Settings – User"
                             },
