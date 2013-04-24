@@ -94,5 +94,6 @@
   "ssh" : {
     "command" : "ssh",
     "path" : "/usr/bin"
-  }
+  },
+  "gotoversion" : "6.15.4"
 }

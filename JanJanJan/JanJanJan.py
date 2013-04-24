@@ -210,3 +210,73 @@ class OpenLogOnVmCommand(sublime_plugin.WindowCommand):
             path = re.sub(r"\\", "/", path)
         if path:
             self.window.open_file(path)
+
+class BuildCssOnVmCommand(sublime_plugin.WindowCommand):
+    def run(self, vm, args={}):
+        self.vm = vm
+        self.args = args
+        if args.get("version"):
+            self.on_done(args.get("version"))
+        else:
+            self.window.show_input_panel("-version", "6.15.4", self.on_done, None, None)
+    def on_done(self, version_string):
+        if sublime.platform() == "windows":
+            if self.self.vm == "C":
+                self.window.run_command("exec", {
+                    "cmd": "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Presentation\\Scripts\\buildCSS.pl -storetype Store -version " + version_string
+                })
+        else:
+            sshSettings = sublime.load_settings("JanJanJan.sublime-settings").get("ssh", {
+                "command" : "ssh",
+                "path" : "/usr/bin"
+            })
+            cmd = [
+                sshSettings.get("command", "ssh"),
+                "root@" + self.vm,
+                "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Presentation/Scripts/buildCSS.pl -storetype Store -version " + version_string
+            ]
+            execDict = {
+                "cmd" : cmd
+            }
+            if sshSettings.get("path"):
+                execDict.update({
+                    "path" : sshSettings["path"]
+                })
+            self.window.run_command("exec", execDict)
+
+class BuildJsOnVmCommand(sublime_plugin.WindowCommand):
+    def run(self, vm, args={}):
+        self.vm = vm
+        self.args = args
+        if args.get("version"):
+            self.on_done(args.get("version"))
+        else:
+            self.window.show_input_panel("-version", sublime.load_settings("JanJanJan.sublime-settings").get("gotoversion","6.15.4"), self.on_done, None, None)
+    def on_done(self, version_string):
+        if sublime.platform() == "windows":
+            if self.self.vm == "C":
+                self.window.run_command("exec", {
+                    "cmd": "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Presentation\\Scripts\\buildJS.pl -storetype Store -version " + version_string
+                })
+        else:
+            sshSettings = sublime.load_settings("JanJanJan.sublime-settings").get("ssh", {
+                "command" : "ssh",
+                "path" : "/usr/bin"
+            })
+            cmd = [
+                sshSettings.get("command", "ssh"),
+                "root@" + self.vm,
+                "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Presentation/Scripts/buildJS.pl -storetype Store -debug -version " + version_string
+            ]
+            execDict = {
+                "cmd" : cmd
+            }
+            if sshSettings.get("path"):
+                execDict.update({
+                    "path" : sshSettings["path"]
+                })
+            self.window.run_command("exec", execDict)
+
+
+
+
