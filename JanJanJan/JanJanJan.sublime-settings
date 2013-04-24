@@ -65,13 +65,15 @@
   },
   "file_commands" : {
     "check_perl_syntax" : {
-      "cmd" : "/srv/epages/eproot/Perl/bin/perl -c"
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl -c",
+      "file_regex" : "/([^/]*?) line ([0-9]*)"
     },
     "check_js_syntax" : {
       "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Presentation/Scripts/checkJSSyntax.pl -type Store -warnings -file"
     },
     "perl_critic" : {
-      "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Core/Scripts/critic.pl -verbose -profile /srv/epages/eproot/Cartridges/DE_EPAGES/Core/Scripts/perlcritic.conf"
+      "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Core/Scripts/critic.pl -verbose -profile /srv/epages/eproot/Cartridges/DE_EPAGES/Core/Scripts/perlcritic.conf",
+      "file_regex" : "/([^/]*?) line ([0-9]*)"
     },
     "organize_imports" : {
       "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Core/Scripts/refactorCritic.pl -policy DE_EPAGES::Style::RequireCorrectImports -transform OrganizeImports -verbose"
