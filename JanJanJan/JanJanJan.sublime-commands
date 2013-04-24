@@ -259,5 +259,35 @@
         "args": {
             "command": "delete_hook"
         }
+    },
+    {
+        "caption": "Epages: Build CSS",
+        "command": "run_command_with_vm",
+        "args": {
+            "command": "build_css"
+        }
+    },
+    {
+        "caption": "Choose VM: Build CSS",
+        "command": "choose_vm",
+        "args": {
+            "command": "build_css",
+            "runcommand": true
+        }
+    },
+    {
+        "caption": "Epages: Build JS",
+        "command": "run_command_with_vm",
+        "args": {
+            "command": "build_js"
+        }
+    },
+    {
+        "caption": "Choose VM: Build JS",
+        "command": "choose_vm",
+        "args": {
+            "command": "build_js",
+            "runcommand": true
+        }
     }
 ]
