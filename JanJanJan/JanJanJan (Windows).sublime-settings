@@ -6,9 +6,9 @@
             "C", "Lokal"
         ]
     ],
-    "filepath_to_vm" : "[\\\\]*([A-Z]|[^\\\\]+).*$",
+    "filepath_to_vm" : "^[\\\\]*([A-Za-z0-9-]+).*$",
     "drive_letter_to_vm_name" : {
-    	"X" : "broddeck-vm-1"
-    },
-    "path_to_putty" : "C:\\Users\\broddeck\\Downloads\\putty"
+    	//"X" : "broddeck-vm-1"
+    }
+    //"path_to_putty" : "C:\\Users\\broddeck\\Downloads\\putty"
 }
