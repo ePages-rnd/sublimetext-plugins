@@ -1,0 +1,34 @@
+[
+    {
+        "caption": "Quick CVS: diff",
+        "command": "run_build_cvs",
+        "args" : {
+            "build_system" : "Packages/QuickCVS/CVS.sublime-build",
+            "build_variant" :"diff"
+        }
+    },
+    {
+        "caption": "Quick CVS: update",
+        "command": "run_build_cvs",
+        "args" : {
+            "build_system" : "Packages/QuickCVS/CVS.sublime-build",
+            "build_variant" :"update"
+        }
+    },
+    {
+        "caption": "Quick CVS: get clean copy",
+        "command": "run_build_cvs",
+        "args" : {
+            "build_system" : "Packages/QuickCVS/CVS.sublime-build",
+            "build_variant" :"get_clean_copy"
+        }
+    },
+    {
+        "caption": "Quick CVS: status",
+        "command": "run_build_cvs",
+        "args" : {
+            "build_system" : "Packages/QuickCVS/CVS.sublime-build",
+            "build_variant" :"status"
+        }
+    }
+]

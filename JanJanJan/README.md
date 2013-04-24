@@ -24,7 +24,7 @@ Manually copy the **JanJanJan** folder inside this repository to your Packages d
 Configuration
 --------------
 Edit User Settings:
-* In Sublime Text. 
+* In Sublime Text.
 * Click the **Preferences > Package Settings > JanJanJan > User - Settings User** menu entry.
 * Edit the following **json** object and save it into your User Settings file.
 ### Windows
@@ -36,7 +36,7 @@ Edit User Settings:
         [
             "C", "Lokal" // "driveletter" : "Description of the machine mounted on the driveletter"
         ],
-    
+
         [
             "X", "VM1" // You can add more virtual machines mounted on more drives here.
         ]
@@ -50,7 +50,7 @@ Edit User Settings:
 ### Unix
 ``` js
 {
-  "jr-vm-lin-1" : "/Volumes/jr-vm-lin-1/srv/epages/eproot/", 
+  "jr-vm-lin-1" : "/Volumes/jr-vm-lin-1/srv/epages/eproot/",
   // "hostname of virtual machine" : "path to eproot on virtual machine on your file system"
   "jr-vm-lin-2" : "/Volumes/jr-vm-lin-2/srv/epages/eproot/",
   "jr-vm-lin-3" : "/Volumes/jr-vm-lin-3/srv/epages/eproot/",
@@ -69,12 +69,6 @@ Edit User Settings:
 
 Features
 --------
-### Quick CVS
-Runs **cvs** on your console and prints output to Sublime Text console.
-* Status
-* Diff
-* Update
-* Get Clean Copy
 
 ### Epages commands
 Runs epages commands on virtual machine (or locally on windows, if applicable)
@@ -89,7 +83,7 @@ Runs epages commands on virtual machine (or locally on windows, if applicable)
 * perl_critic
 * organize_imports
 * import_xml
-* import_hook 
+* import_hook
 * delete_xml
 * delete_hook
 * ... see JanJanJan.sublime-settings
