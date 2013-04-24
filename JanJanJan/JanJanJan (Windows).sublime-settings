@@ -6,7 +6,7 @@
             "C", "Lokal"
         ]
     ],
-    "filepath_to_vm" : "^([A-Z]):.*",
+    "filepath_to_vm" : "[\\\\]*([A-Z]|[^\\\\]+).*$",
     "drive_letter_to_vm_name" : {
     	"X" : "broddeck-vm-1"
     },
