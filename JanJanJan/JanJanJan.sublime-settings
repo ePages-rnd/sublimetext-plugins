@@ -45,6 +45,12 @@
     },
     "set_debug_level_2" : {
       "cmd" : "C:\\epages\\Perl\\bin\\perl.exe C:\\epages\\Cartridges\\DE_EPAGES\\Object\\Scripts\\set.pl -storename Store -path \"/\" JSDebugLevel=2"
+    },
+    "restart_perl" : {
+      "cmd" : ["net stop epages && net start epages"] // Not sure if this works, otherwise just use execute .bat here
+    },
+    "restart_app" : {
+      "cmd" : ["net stop epages && net start epages"]
     }
   },
   "windows_file_commands" : {
