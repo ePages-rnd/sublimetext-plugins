@@ -216,7 +216,7 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/User/JanJanJan ($platform).sublime-settings"
+                                    "file": "${packages}/User/JanJanJan.sublime-settings"
                                 },
                                 "caption": "Settings – User"
                             },
