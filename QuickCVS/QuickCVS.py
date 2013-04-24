@@ -11,3 +11,20 @@ class RunBuildCvsCommand(sublime_plugin.WindowCommand):
             "variant": build_variant
         })
         self.window.run_command("set_build_system", {"file":""}) # Set build_system to *automatic*
+
+class QuickCvsCommitBuildTargetCommand(sublime_plugin.WindowCommand):
+    def run(self, cmd = [], file_regex = "", line_regex = "", working_dir = "", encoding = "utf-8", env = {}, path = "", shell = False):
+        self.execDict = {
+            "path" : path,
+            "shell" : shell,
+            "cmd" : cmd,
+            "file_regex" : file_regex,
+            "line_regex" : line_regex,
+            "working_dir" : working_dir,
+            "encoding" : encoding,
+            "env" : env
+        }
+        self.window.show_input_panel("Commit message", '""', self.on_done, None, None)
+    def on_done(self, message):
+        self.execDict["cmd"].insert(3,message)
+        self.window.run_command('exec', self.execDict)

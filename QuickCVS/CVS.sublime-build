@@ -16,6 +16,11 @@
 			"cmd": ["cvs", "update", "$file_name"]
 		},
 		{
+			"name" : "commit",
+			"cmd": ["cvs", "commit", "-m", "$file_name"],
+			"target":"quick_cvs_commit_build_target"
+		},
+		{
 			"name" : "get_clean_copy",
 			"cmd": ["cvs", "update", "-C","$file_name"]
 		},
@@ -23,7 +28,7 @@
 			"name" : "diff",
 			"cmd": ["cvs", "diff", "$file_name"],
 			"file_regex": "Index\\: (.*)$",
-			"line_regex": "^([0-9]+)[^0-9]*" 
+			"line_regex": "^([0-9]+)[^0-9]*"
 		},
 		{
 			"name" : "status",
