@@ -21,6 +21,13 @@
         }
     },
     {
+        "caption": "Epages: Refresh ctags",
+        "command": "exec_command_on_vm",
+        "args": {
+            "command": "refresh_ctags"
+        }
+    },
+    {
         "caption": "Epages: Perm all",
         "command": "exec_command_on_vm",
         "args": {
@@ -100,6 +107,16 @@
         }
     },
     {
+        "caption": "Epages: Open communication.log",
+        "command": "run_command_with_vm",
+        "args": {
+            "command": "open_log",
+            "args" : {
+                "name":"communication"
+            }
+        }
+    },
+    {
         "caption": "Choose VM: Set debug level 0",
         "command": "choose_vm",
         "args": {
@@ -118,6 +135,13 @@
         "command": "choose_vm",
         "args": {
             "command": "set_debug_level_2"
+        }
+    },
+    {
+        "caption": "Choose VM: Refresh ctags",
+        "command": "choose_vm",
+        "args": {
+            "command": "refresh_ctags"
         }
     },
     {
@@ -200,6 +224,17 @@
             "command": "open_log",
             "args" : {
                 "name":"userfault"
+            },
+            "runcommand" : true
+        }
+    },
+    {
+        "caption": "Choose VM: Open communication.log",
+        "command": "choose_vm",
+        "args": {
+            "command": "open_log",
+            "args" : {
+                "name":"communication"
             },
             "runcommand" : true
         }

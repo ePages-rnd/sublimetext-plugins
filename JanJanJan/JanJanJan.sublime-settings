@@ -34,6 +34,9 @@
     },
     "set_debug_level_2" : {
       "cmd" : "/srv/epages/eproot/Perl/bin/perl /srv/epages/eproot/Cartridges/DE_EPAGES/Object/Scripts/set.pl -storename Store -path \"/\" JSDebugLevel=2"
+    },
+    "refresh_ctags" : {
+      "cmd" : "cd /srv/epages/eproot && ctags --languages=Perl -f .tags -R Cartridges"
     }
   },
   "windows_commands" : {
