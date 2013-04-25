@@ -21,6 +21,14 @@ Manually copy the **JanJanJan** folder inside this repository to your Packages d
 * Download the desired folder from this repo and copy it into the **Packages** directory
 * Restart Sublime Text
 
+To use the ctags functionality:
+
+* Install the CTags plugin via the Package Control or grab the copy at [GitHub](https://github.com/SublimeText/CTags) and perform a manual install.
+* Install the ctags command line program on your VMs. For CentOS a simple ```yum install ctags``` will do the job.
+* Initialize via executing the "refresh ctags" command.
+* **Don't use the commands provided by the CTags plugin!** Just update via the "refresh ctags" command.
+* Test the installation. Ctrl+shift+leftmouse on a function/sub/constant name will cause Sublime to move to its definition. (Hit ctrl+shift+rightmouse to go back where you're from.)
+
 Configuration
 --------------
 Edit User Settings:
