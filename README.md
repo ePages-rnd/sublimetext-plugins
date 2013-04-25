@@ -43,6 +43,7 @@ Basic functionality for working with virtual machines running epages on unix and
 * Javascript syntax check.
 * Perl organize imports.
 * Correct permissions.
+* Ctags perl (Linux only, requires ctags plugin).
 * ...
 
 ### [QuickCVS](QuickCVS/)
@@ -52,14 +53,14 @@ Runs **cvs** on your console and prints output to Sublime Text console.
 * Diff
 * Update
 * Get Clean Copy
+* Commit
 
-### [Epages](Epages/) 
+### [Epages](Epages/)
 **currently unstable**. More some **cvs** and **task-managment** implementation, e.g.
 
 * Open in CVS GUI
 * Log, StackTrace snippet for Perl files
 * virtual folders (summarize files to virtual folders/tasks)
-* Ctags perl (Linux only, requires ctags plugin).
 * ...
 
 Development
