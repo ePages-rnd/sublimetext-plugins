@@ -17,7 +17,7 @@
 		},
 		{
 			"name" : "commit",
-			"cmd": ["cvs", "commit", "-m", "$file_name"],
+			"cmd": ["cvs", "commit", "-m", "$project_base_name","$file_name"],
 			"target":"quick_cvs_commit_build_target"
 		},
 		{
