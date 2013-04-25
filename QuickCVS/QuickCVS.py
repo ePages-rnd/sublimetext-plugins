@@ -24,7 +24,7 @@ class QuickCvsCommitBuildTargetCommand(sublime_plugin.WindowCommand):
             "encoding" : encoding,
             "env" : env
         }
-        self.window.show_input_panel("Commit message", '""', self.on_done, None, None)
+        self.window.show_input_panel("Commit message", "\"" + self.execDict["cmd"][3] + ":\"", self.on_done, None, None)
     def on_done(self, message):
-        self.execDict["cmd"].insert(3,message)
+        self.execDict["cmd"][3] = message
         self.window.run_command('exec', self.execDict)
