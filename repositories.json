@@ -1,0 +1,42 @@
+{
+    "schema_version": "1.2",
+    "repositories": [
+        "http://sublime.wbond.net/packages.json"
+    ],
+    "package_name_map": {},
+    "renamed_packages": {},
+    "packages": {
+        "http://sublime.wbond.net/packages.json": [
+            {
+                "name": "QuickCVS",
+                "description": "QuickCVS plugin",
+                "author": "Jan Raasch and Jonas Gratz",
+                "homepage": "https://github.com/jgratz4epages/sublimetext-quickcvs",
+                "last_modified": "2013-05-02 14:00:00",
+                "platforms": {
+                    "*": [
+                        {
+                            "version": "1.0",
+                            "url": "https://nodeload.github.com/jgratz4epages/sublimetext-quickcvs/zipball/master"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Flakes",
+                "description": "ePages Flakes plugin",
+                "author": "Jan Raasch and Jonas Gratz",
+                "homepage": "https://github.com/jgratz4epages/sublimetext-epages-flakes",
+                "last_modified": "2013-05-02 14:00:00",
+                "platforms": {
+                    "*": [
+                        {
+                            "version": "1.0",
+                            "url": "https://nodeload.github.com/jgratz4epages/sublimetext-epages-flakes/zipball/master"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
