@@ -1,7 +1,8 @@
 {
     "schema_version": "1.2",
     "repositories": [
-        "https://raw.github.com/jgratz4epages/sublimetext-plugins/master/packages.json"
+        "https://raw.github.com/jgratz4epages/sublimetext-plugins/master/packages.json",
+        "http://sublime.wbond.net/packages.json"
     ],
     "package_name_map": {},
     "renamed_packages": {},
