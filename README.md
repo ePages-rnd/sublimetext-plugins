@@ -33,7 +33,7 @@ Our plugin resides at this repo, so you have to add the URL manually:
 
 ```
 {
-    "auto\_upgrade\_frequency": 0,
+    "auto_upgrade_frequency": 0,
     "repository_channels":
     [
         "https://raw.github.com/ePages-rnd/sublimetext-plugins/master/repositories.json"
