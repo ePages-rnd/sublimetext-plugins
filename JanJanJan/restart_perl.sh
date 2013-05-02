@@ -1,1 +1,0 @@
-/etc/init.d/epages6 restart_perl

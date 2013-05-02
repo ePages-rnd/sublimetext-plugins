@@ -8,20 +8,47 @@ sublimetext-plugins
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Plugins](#plugins)
-  - [JanJanJan](#janjanjan)
+  - [Flakes](#flakes)
   - [QuickCVS](#quickcvs)
-  - [Epages](#epages)
 - [Notes on Development](#development)
 
 Installation
 ------------
-Currently the plugins are **not** available through [Sublime Package Contol](http://wbond.net/sublime_packages/package_control).
-So you have to manually copy the desired plugins (i.e. folders in this repository) to your Packages directory. In Sublime Text:
+The plugins are available through [Sublime Package Contol](http://wbond.net/sublime_packages/package_control). Each plugin has its own repo. This repo is only the interface, which gathers the plugins in place.
 
-* Click the **Preferences > Browse Packages…** menu entry.
-* Browse up a folder. You should see a **Packages** directory.
-* Download the desired folder from this repo and copy it into the **Packages** directory
-* Restart Sublime Text
+So you have to install Package Control first, if you haven't done this yet:
+
+* Click the **View > Show Console** menu entry.
+* Copy and paste following right into the console:
+
+```import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')```
+
+* Hit return.
+* Restart Sublime Text 2.
+
+Our plugin resides at this repo, so you have to add the URL manually:
+
+* Click on **Preferences > Package Settings > Package Control > Settings - User**.
+* Copy & paste following snippet into this file:
+
+```
+{
+    "auto_upgrade_frequency": 0,
+    "repository_channels":
+    [
+        "https://raw.github.com/ePages-rnd/sublimetext-plugins/master/repositories.json"
+    ],
+    "submit_usage": false
+}
+```
+
+* Save the file and restart Sublime.
+
+Now you can install the two plugins:
+
+* Hit **Ctrl-Shift-P** or **Cmd-Shift-P** and choose **QuickCVS**.
+* Repeat for **Flakes**.
+* Repeat for CTags and FileDiff as well, they're very helpful plugins, too.
 
 Configuration
 --------------
@@ -29,7 +56,7 @@ See the **README.md** inside the plugin folders for personal settings you may ha
 
 Plugins
 --------
-### [JanJanJan](JanJanJan/)
+### [Flakes](https://github.com/ePages-rnd/sublimetext-epages-flakes)
 Basic functionality for working with virtual machines running epages on unix and windows, e.g.
 
 * Open file (e.g. copy template debugging comment -> strg+shift+o in Sublime Text -> opens file on your system).
@@ -46,8 +73,8 @@ Basic functionality for working with virtual machines running epages on unix and
 * Ctags perl (Linux only, requires ctags plugin).
 * ...
 
-### [QuickCVS](QuickCVS/)
-Runs **cvs** on your console and prints output to Sublime Text console.
+### [QuickCVS](https://github.com/ePages-rnd/sublimetext-quickcvs)
+Runs **cvs** on your console and prints output to Sublime Text 2 console.
 
 * Status
 * Diff
@@ -55,18 +82,7 @@ Runs **cvs** on your console and prints output to Sublime Text console.
 * Get Clean Copy
 * Commit
 
-### [Epages](Epages/)
-**currently unstable**. More some **cvs** and **task-managment** implementation, e.g.
-
-* Open in CVS GUI
-* Log, StackTrace snippet for Perl files
-* virtual folders (summarize files to virtual folders/tasks)
-* ...
-
 Development
 ----------
-* Try to **avoid duplication** of functionality in different plugins.
-* The aim should be to have **all plugins** in this repo working next to each other.
-* Document functionality in a **README.md** in your plugin folder.
 * Resources for development:
   * [Sublime Info - Information about Sublime Text 2](http://sublimetext.info/)
