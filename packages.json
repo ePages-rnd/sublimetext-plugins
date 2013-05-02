@@ -11,7 +11,7 @@
                 "*": [
                     {
                         "version": "1.0",
-                        "url": "http://nodeload.github.com/jgratz4epages/sublimetext-quickcvs/zipball/master"
+                        "url": "https://nodeload.github.com/jgratz4epages/sublimetext-quickcvs/zipball/master"
                     }
                 ]
             }
@@ -26,7 +26,7 @@
                 "*": [
                     {
                         "version": "1.0",
-                        "url": "http://nodeload.github.com/jgratz4epages/sublimetext-epages-flakes/zipball/master"
+                        "url": "https://nodeload.github.com/jgratz4epages/sublimetext-epages-flakes/zipball/master"
                     }
                 ]
             }
