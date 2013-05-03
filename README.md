@@ -95,6 +95,7 @@ Runs **cvs** on your console and prints output to Sublime Text 2 console.
 * Update
 * Get Clean Copy
 * Commit
+* Open folder in cervisia (linux only)
 
 Other Plugins
 --------
