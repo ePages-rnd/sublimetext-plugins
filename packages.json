@@ -6,12 +6,12 @@
             "description": "QuickCVS plugin",
             "author": "Jan Raasch and Jonas Gratz",
             "homepage": "https://github.com/ePages-rnd/sublimetext-quickcvs",
-            "last_modified": "2013-05-02 18:30:00",
+            "last_modified": "2013-05-03 10:55:00",
             "platforms": {
                 "*": [
                     {
-                        "version": "1.0.1",
-                        "url": "https://nodeload.github.com/ePages-rnd/sublimetext-quickcvs/zip/v1.0.1"
+                        "version": "1.0.2",
+                        "url": "https://nodeload.github.com/ePages-rnd/sublimetext-quickcvs/zip/v1.0.2"
                     }
                 ]
             }
