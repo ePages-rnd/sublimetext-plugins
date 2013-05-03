@@ -44,12 +44,15 @@ Our plugin resides at this repo, so you have to add the URL manually:
     // "auto_upgrade_frequency": 0,
     
     
-    // Add the ePages-rnd repositories to your list of channels.
+    // Add the ePages-rnd repositories to your list of repositories.
     
-    "repository_channels":
-    [
-        "https://raw.github.com/ePages-rnd/sublimetext-plugins/master/repositories.json",
-        "http://sublime.wbond.net/repositories.json"
+    "package_name_map": {
+        "sublimetext-epages-flakes": "Flakes",
+        "sublimetext-quickcvs": "QuickCVS"
+    },
+    "repositories": [
+        "https://github.com/ePages-rnd/sublimetext-quickcvs",
+        "https://github.com/ePages-rnd/sublimetext-epages-flakes/"
     ]
 }
 ```
