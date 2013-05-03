@@ -48,7 +48,8 @@ Our plugin resides at this repo, so you have to add the URL manually:
     
     "repository_channels":
     [
-        "https://raw.github.com/ePages-rnd/sublimetext-plugins/master/repositories.json"
+        "https://raw.github.com/ePages-rnd/sublimetext-plugins/master/repositories.json",
+        "http://sublime.wbond.net/repositories.json"
     ]
 }
 ```
