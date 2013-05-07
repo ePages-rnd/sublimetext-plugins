@@ -3,6 +3,8 @@ sublimetext-plugins
 
 [Sublime Text 2](http://www.sublimetext.com/2) plugins that may allow you to have a better workflow.
 
+*Don't know why you want to use [Sublime Text 2](http://www.sublimetext.com/2) and don't like reading? [Watch these videos](https://tutsplus.com/course/improve-workflow-in-sublime-text-2/).*
+
 ---
 
 - [Installation](#installation)
@@ -19,6 +21,8 @@ sublimetext-plugins
   - [Emmet](#emmet)
   - [BrowserRefresh](#browserrefresh)
   - [Terminal](#terminal)
+  - [FavoriteFiles](#favoritefiles)
+  - [GlueViews](#glueviews)
 - [Notes on Development](#development)
 
 Installation
@@ -130,6 +134,12 @@ Brings the last active window (optional in Chrome, Canary, Safari and WebKit on 
 
 ### [Terminal](http://wbond.net/sublime_packages/terminal)
 Shortcuts and menu entries for opening a terminal at the current file, or the current root project folder.
+
+### [FavoriteFiles](https://github.com/facelessuser/FavoriteFiles)
+A simple plugin to save favorite files that are not part of a project. It supports adding and removing favorites and open favorite files.
+
+### [GlueViews](http://www.youtube.com/watch?v=ChXgMR-9eCE)
+A text command which takes multiple views and enables an event listener to monitor them. If the visible region of the active view changes, the other views get moved by the same amount either up or down.
 
 Development
 ----------
