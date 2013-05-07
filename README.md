@@ -11,34 +11,32 @@ sublimetext-plugins
   - [Flakes](#flakes)
   - [QuickCVS](#quickcvs)
 - [Awesome Non-ePages Plugins](#other-plugins)
+  - [JSLint](#jslint)
   - [FileDiffs](#filediffs)
   - [CTags](#ctags)
   - [CodeFormatter](#codeformatter)
-  - [Emmet](#emmet)
   - [Pretty JSON](#pretty-json)
+  - [Emmet](#emmet)
+  - [BrowserRefresh](#browserrefresh)
+  - [Terminal](#terminal)
 - [Notes on Development](#development)
 
 Installation
 ------------
-The plugins are available through [Sublime Package Contol](http://wbond.net/sublime_packages/package_control). Each plugin has its own repo. This repo is only the interface, which gathers the plugins in place.
+The plugins are available through [Sublime Package Contol](http://wbond.net/sublime_packages/package_control). If you have not done this yet, follow [these instructions](http://wbond.net/sublime_packages/package_control/installation) to install Package Control.
 
-So you have to install Package Control first, if you haven't done this yet:
-
-* Click the **View > Show Console** menu entry.
-* Copy and paste following right into the console:
-
-```import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')```
-
-* Hit return.
-* Restart Sublime Text 2.
-
-Our plugin resides at this repo, so you have to add the URL manually:
+Our plugins reside at their own repos, so you have to add the URLs manually:
 
 * Click on **Preferences > Package Settings > Package Control > Settings - User**.
 * Edit and add the following key/value-pairs to that **json** file:
 
 ```js
 {   
+    // Automatically install updates to previsouly installed packages. Default is true.
+    
+    // "auto_upgrade": false,
+    
+    
     // Check for fresh versions of plugins after every restart of Sublime Text.
     
     // "auto_upgrade_frequency": 0,
@@ -99,10 +97,13 @@ Runs **cvs** on your console and prints output to Sublime Text 2 console.
 * Update
 * Get Clean Copy
 * Commit
-* Open folder in cervisia (linux only)
+* ...
 
 Other Plugins
 --------
+### [JSLint](https://github.com/janraasch/Sublime-JSLint)
+JSLint plugin for Sublime Text 2, using node and node-jslint.
+
 ### [FileDiffs](https://github.com/colinta/SublimeFileDiffs)
 Shows diffs - also in an external diff tool - between the current file, or selection(s) in the current file, and clipboard, another file, or unsaved changes.
 
@@ -118,13 +119,18 @@ CodeFormatter has support for the following languages:
 * CSS - By JSBeautifier
 * Python - By PythonTidy (only ST2)
 
-### [Emmet](http://emmet.io/)
-Emmet is a plugin for many popular text editors which greatly improves HTML & CSS workflow. **Seriously**, if you work with a lot of html/css, have a look at this...
-
 ### [Pretty JSON](https://github.com/dzhibas/SublimePrettyJson)
 Pretty sweet for keeping your /User/SettingsName.sublime-settings files nice and tidied up.
 
+### [Emmet](http://emmet.io/)
+Emmet is a plugin for many popular text editors which greatly improves HTML & CSS workflow. **Seriously**, if you work with a lot of html/css, have a look at this...
+
+### [BrowserRefresh](https://github.com/gcollazo/BrowserRefresh-Sublime)
+Brings the last active window (optional in Chrome, Canary, Safari and WebKit on Mac) to the foreground and reload the active tab.
+
+### [Terminal](http://wbond.net/sublime_packages/terminal)
+Shortcuts and menu entries for opening a terminal at the current file, or the current root project folder.
+
 Development
 ----------
-* Resources for development:
-  * [Sublime Info - Information about Sublime Text 2](http://sublimetext.info/)
+see [Sublime Info - Information about Sublime Text 2](http://sublimetext.info/)
