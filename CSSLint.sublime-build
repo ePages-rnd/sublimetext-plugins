@@ -13,7 +13,7 @@
         // ,"--errors=ids,box-sizing"
 
         // Indicate which rules to include as warnings.
-        // ,"--warning=ids,box-sizing"
+        // ,"--warnings=ids,box-sizing"
 
         // Indicate which rules to ignore completely.
         // ,"--ignore=ids,box-sizing"
