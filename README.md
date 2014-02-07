@@ -1,9 +1,9 @@
 sublimetext-plugins
 =================
 
-[Sublime Text 2](http://www.sublimetext.com/2) plugins that may allow you to have a better workflow.
+[Sublime Text 2](http://www.sublimetext.com/2) / [3](http://www.sublimetext.com/3) plugins that may allow you to have a better workflow.
 
-*Don't know why you want to use [Sublime Text 2](http://www.sublimetext.com/2) and don't like reading? [Watch these videos](https://tutsplus.com/course/improve-workflow-in-sublime-text-2/).*
+*Don't know why you want to use [Sublime Text](http://www.sublimetext.com) and don't like reading? [Watch these videos](https://tutsplus.com/course/improve-workflow-in-sublime-text-2/).*
 
 ---
 
@@ -28,6 +28,17 @@ sublimetext-plugins
 Installation
 ------------
 The plugins are available through [Sublime Package Contol](http://wbond.net/sublime_packages/package_control). If you have not done this yet, follow [these instructions](http://wbond.net/sublime_packages/package_control/installation) to install Package Control.
+
+
+### Prepare Sublime Text 3
+
+This repo provides a repository.json, which points to the latest releases. Open the Command Palette (`Command+Shift+P` on OS X, `Control+Shift+P` on Linux/Windows) and choose `Package Control: Add repository`. Enter following url:
+
+```
+https://raw.github.com/ePages-rnd/sublimetext-plugins/master/repository.json
+```
+
+### Prepare Sublime Text 2
 
 Our plugins reside at their own repos, so you have to add the URLs manually:
 
@@ -60,6 +71,8 @@ Our plugins reside at their own repos, so you have to add the URLs manually:
 ```
 
 * Save the file and restart Sublime.
+
+### Install
 
 Now you can install the plugins:
 
@@ -101,6 +114,7 @@ Runs **cvs** on your console and prints output to Sublime Text 2 console.
 * Update
 * Get Clean Copy
 * Commit
+* Status and branch in status bar
 * ...
 
 Other Plugins
