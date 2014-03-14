@@ -12,6 +12,8 @@ sublimetext-plugins
 - [Plugins](#plugins)
   - [Flakes](#flakes)
   - [QuickCVS](#quickcvs)
+  - [TLE syntax check](#tle-syntax-check)
+  - [Perl syntax check](#perl-syntax-check)
 - [Awesome Non-ePages Plugins](#other-plugins)
   - [JSLint](#jslint)
   - [FileDiffs](#filediffs)
@@ -107,7 +109,7 @@ Basic functionality for working with virtual machines running epages on unix and
 * ...
 
 ### [QuickCVS](https://github.com/ePages-rnd/sublimetext-quickcvs)
-Runs **cvs** on your console and prints output to Sublime Text 2 console.
+Runs **cvs** on your console and prints output to Sublime Text console.
 
 * Status
 * Diff
@@ -116,6 +118,17 @@ Runs **cvs** on your console and prints output to Sublime Text 2 console.
 * Commit
 * Status and branch in status bar
 * ...
+
+
+### [TLE syntax check](https://github.com/ePages-rnd/SublimeLinter-contrib-tlec)
+
+Live TLE syntax check as you type. ST3 only.
+
+
+### [Perl syntax check](https://github.com/ePages-rnd/SublimeLinter-contrib-perl-epages6)
+
+Live $PERL syntax check as you type. ST3 only.
+
 
 Other Plugins
 --------
