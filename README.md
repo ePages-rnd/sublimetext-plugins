@@ -13,6 +13,7 @@ sublimetext-plugins
   - [Flakes](#flakes)
   - [QuickCVS](#quickcvs)
   - [TLE syntax check](#tle-syntax-check)
+  - [TLE syntax highlighting](#tle-syntax-highlight)
   - [Perl syntax check](#perl-syntax-check)
 - [Awesome Non-ePages Plugins](#other-plugins)
   - [JSLint](#jslint)
@@ -123,6 +124,11 @@ Runs **cvs** on your console and prints output to Sublime Text console.
 ### [TLE syntax check](https://github.com/ePages-rnd/SublimeLinter-contrib-tlec)
 
 Live TLE syntax check as you type. ST3 only.
+
+
+### [TLE syntax highlight](https://github.com/ePages-rnd/sublimetext-epages-tle)
+
+TLE syntax highlighting.
 
 
 ### [Perl syntax check](https://github.com/ePages-rnd/SublimeLinter-contrib-perl-epages6)
