@@ -49,9 +49,9 @@
             "releases": [
                 {
                     "sublime_text": ">=3000",
-                    "version": "1.1.2",
+                    "version": "1.1.3",
                     "date": "2014-11-06 18:00:00",
-                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-epages-tle/zip/v1.1.2"
+                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-epages-tle/zip/v1.1.3"
                 }
             ]
         },
@@ -63,9 +63,9 @@
             "releases": [
                 {
                     "sublime_text": ">=3000",
-                    "version": "1.0.1",
+                    "version": "1.0.2",
                     "date": "2014-11-06 18:00:00",
-                    "url": "https://codeload.github.com/ePages-rnd/SublimeLinter-contrib-tlec/zip/v1.0.1"
+                    "url": "https://codeload.github.com/ePages-rnd/SublimeLinter-contrib-tlec/zip/v1.0.2"
                 }
             ]
         },
@@ -77,9 +77,9 @@
             "releases": [
                 {
                     "sublime_text": ">=3000",
-                    "version": "1.0.0",
+                    "version": "1.0.1",
                     "date": "2014-11-06 18:00:00",
-                    "url": "https://codeload.github.com/ePages-rnd/SublimeLinter-contrib-perl-epages6/zip/v1.0.0"
+                    "url": "https://codeload.github.com/ePages-rnd/SublimeLinter-contrib-perl-epages6/zip/v1.0.1"
                 }
             ]
         },
@@ -91,9 +91,9 @@
             "releases": [
                 {
                     "sublime_text": ">=3000",
-                    "version": "1.0.0",
+                    "version": "1.0.1",
                     "date": "2014-11-06 19:00:00",
-                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-theme-perfect/zip/v1.0.0"
+                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-theme-perfect/zip/v1.0.1"
                 }
             ]
         }
