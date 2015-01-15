@@ -2,42 +2,16 @@
     "schema_version": "2.0",
     "packages": [
         {
-            "name": "QuickCVS",
-            "description": "Lightweight CVS plugin for Sublime Text 2 / 3",
-            "author": "Jan Raasch (jraasch), Jonas Gratz (jgratz4epages)",
-            "details": "https://github.com/ePages-rnd/sublimetext-quickcvs",
+            "name": "Epages6",
+            "description": "The new default plugin for epages6 development and the successor of the Flakes plugin",
+            "author": "Jonas Gratz (jgratz4epages)",
+            "details": "https://github.com/ePages-rnd/sublimetext-epages6",
             "releases": [
                 {
-                    "sublime_text": "<3000",
-                    "version": "1.0.4",
-                    "date": "2013-08-16 12:00:00",
-                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-quickcvs/zip/v1.0.4"
-                },
-                {
                     "sublime_text": ">=3000",
-                    "version": "2.1.1",
-                    "date": "2014-02-07 15:00:00",
-                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-quickcvs/zip/v2.1.1"
-                }
-            ]
-        },
-        {
-            "name": "Flakes",
-            "description": "A tasty Sublime Text 2 / 3 treat for your epages6 development workflow",
-            "author": "Jan Raasch (jraasch), Jonas Gratz (jgratz4epages)",
-            "details": "https://github.com/ePages-rnd/sublimetext-epages-flakes",
-            "releases": [
-                {
-                    "sublime_text": "<3000",
-                    "version": "1.1.7",
-                    "date": "2013-08-28 16:45:00",
-                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-epages-flakes/zip/v1.1.7"
-                },
-                {
-                    "sublime_text": ">=3000",
-                    "version": "2.1.1",
-                    "date": "2014-11-14 14:00:00",
-                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-epages-flakes/zip/v2.1.1"
+                    "version": "1.0.1",
+                    "date": "2015-01-15 16:00:00",
+                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-epages6/zip/v1.0.1"
                 }
             ]
         },
