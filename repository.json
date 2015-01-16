@@ -9,8 +9,8 @@
             "releases": [
                 {
                     "sublime_text": ">=3000",
-                    "version": "1.0.1",
-                    "date": "2015-01-15 16:00:00",
+                    "version": "1.0.2",
+                    "date": "2015-01-16 13:00:00",
                     "url": "https://codeload.github.com/ePages-rnd/sublimetext-epages6/zip/v1.0.1"
                 }
             ]
@@ -37,8 +37,8 @@
             "releases": [
                 {
                     "sublime_text": ">=3000",
-                    "version": "1.0.2",
-                    "date": "2014-11-06 18:00:00",
+                    "version": "1.0.3",
+                    "date": "2015-01-16 13:00:00",
                     "url": "https://codeload.github.com/ePages-rnd/SublimeLinter-contrib-tlec/zip/v1.0.2"
                 }
             ]
@@ -51,8 +51,8 @@
             "releases": [
                 {
                     "sublime_text": ">=3000",
-                    "version": "1.0.1",
-                    "date": "2014-11-06 18:00:00",
+                    "version": "1.0.2",
+                    "date": "2015-01-16 13:00:00",
                     "url": "https://codeload.github.com/ePages-rnd/SublimeLinter-contrib-perl-epages6/zip/v1.0.1"
                 }
             ]
