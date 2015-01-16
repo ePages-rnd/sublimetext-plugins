@@ -11,7 +11,7 @@
                     "sublime_text": ">=3000",
                     "version": "1.0.2",
                     "date": "2015-01-16 13:00:00",
-                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-epages6/zip/v1.0.1"
+                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-epages6/zip/v1.0.2"
                 }
             ]
         },
@@ -39,7 +39,7 @@
                     "sublime_text": ">=3000",
                     "version": "1.0.3",
                     "date": "2015-01-16 13:00:00",
-                    "url": "https://codeload.github.com/ePages-rnd/SublimeLinter-contrib-tlec/zip/v1.0.2"
+                    "url": "https://codeload.github.com/ePages-rnd/SublimeLinter-contrib-tlec/zip/v1.0.3"
                 }
             ]
         },
@@ -53,7 +53,7 @@
                     "sublime_text": ">=3000",
                     "version": "1.0.2",
                     "date": "2015-01-16 13:00:00",
-                    "url": "https://codeload.github.com/ePages-rnd/SublimeLinter-contrib-perl-epages6/zip/v1.0.1"
+                    "url": "https://codeload.github.com/ePages-rnd/SublimeLinter-contrib-perl-epages6/zip/v1.0.2"
                 }
             ]
         },
