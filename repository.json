@@ -9,9 +9,9 @@
             "releases": [
                 {
                     "sublime_text": ">=3000",
-                    "version": "1.0.2",
-                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-epages6/zip/v1.0.2",
-                    "date": "2015-01-16 13:00:00"
+                    "version": "1.0.3",
+                    "url": "https://codeload.github.com/ePages-rnd/sublimetext-epages6/zip/v1.0.3",
+                    "date": "2015-01-16 14:00:00"
                 }
             ]
         },
