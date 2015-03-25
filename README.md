@@ -9,9 +9,7 @@ sublimetext-plugins
 
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [Plugins](#plugins)
-  - [Flakes](#flakes)
-  - [QuickCVS](#quickcvs)
+  - [epages6 dev tools](#epages6)
   - [TLE syntax check](#tle-syntax-check)
   - [TLE syntax highlighting](#tle-syntax-highlight)
   - [Perl syntax check](#perl-syntax-check)
@@ -26,6 +24,9 @@ sublimetext-plugins
   - [Terminal](#terminal)
   - [FavoriteFiles](#favoritefiles)
   - [GlueViews](#glueviews)
+- [Deprecated Plugins](#plugins)
+  - [Flakes](#flakes)
+  - [QuickCVS](#quickcvs)
 - [Notes on Development](#development)
 
 Installation
@@ -41,48 +42,13 @@ This repo provides a repository.json, which points to the latest releases. Open 
 https://raw.github.com/ePages-rnd/sublimetext-plugins/master/repository.json
 ```
 
-### Prepare Sublime Text 2
-
-Our plugins reside at their own repos, so you have to add the URLs manually:
-
-* Click on **Preferences > Package Settings > Package Control > Settings - User**.
-* Edit and add the following key/value-pairs to that **json** file:
-
-```js
-{   
-    // Automatically install updates to previsouly installed packages. Default is true.
-    
-    // "auto_upgrade": false,
-    
-    
-    // Check for fresh versions of plugins after every restart of Sublime Text.
-    
-    // "auto_upgrade_frequency": 0,
-    
-    
-    // Add the ePages-rnd repositories to your list of repositories.
-    
-    "package_name_map": {
-        "sublimetext-epages-flakes": "Flakes",
-        "sublimetext-quickcvs": "QuickCVS"
-    },
-    "repositories": [
-        "https://github.com/ePages-rnd/sublimetext-quickcvs",
-        "https://github.com/ePages-rnd/sublimetext-epages-flakes/"
-    ]
-}
-```
-
-* Save the file and restart Sublime.
-
 ### Install
 
 Now you can install the plugins:
 
 * Bring up the Command Palette (`Command+Shift+P` on OS X, `Control+Shift+P` on Linux/Windows). 
 * Select "Package Control: Install Package", wait while Package Control fetches the latest package list. 
-* Then select [Flakes](https://github.com/ePages-rnd/sublimetext-epages-flakes) when the list appears.
-* Repeat for [QuickCVS](https://github.com/ePages-rnd/sublimetext-quickcvs). 
+* Search for our plugins.
 
 The advantage of using this method is that Package Control will automatically keep the plugins up to date with the latest version.
 
@@ -90,40 +56,15 @@ Configuration
 --------------
 See the **README.md** inside the plugin folders for personal settings you may have to adjust.
 
-Plugins
---------
-### [Flakes](https://github.com/ePages-rnd/sublimetext-epages-flakes)
-Basic functionality for working with virtual machines running epages on unix and windows, e.g.
 
-* Open file (e.g. copy template debugging comment -> strg+shift+o in Sublime Text -> opens file on your system).
-* Restart app server.
-* Restart perl.
-* Set JSDebugLevel.
-* Import and delete XMLs.
-* Import and delete hook XMLs.
-* Perl::Critic.
-* Perl syntax check.
-* Javascript syntax check.
-* Perl organize imports.
-* Correct permissions.
-* Ctags perl (Linux only, requires ctags plugin).
-* ...
+### [epages6 dev tools](https://github.com/ePages-rnd/sublimetext-epages6)
 
-### [QuickCVS](https://github.com/ePages-rnd/sublimetext-quickcvs)
-Runs **cvs** on your console and prints output to Sublime Text console.
-
-* Status
-* Diff
-* Update
-* Get Clean Copy
-* Commit
-* Status and branch in status bar
-* ...
+All frequently used epages6 commands like restart app server, import xml, open error log etc.
 
 
 ### [TLE syntax check](https://github.com/ePages-rnd/SublimeLinter-contrib-tlec)
 
-Live TLE syntax check as you type. ST3 only.
+TLE syntax check on save.
 
 
 ### [TLE syntax highlight](https://github.com/ePages-rnd/sublimetext-epages-tle)
@@ -133,7 +74,7 @@ TLE syntax highlighting.
 
 ### [Perl syntax check](https://github.com/ePages-rnd/SublimeLinter-contrib-perl-epages6)
 
-Live $PERL syntax check as you type. ST3 only.
+$PERL syntax check on save.
 
 
 Other Plugins
@@ -174,6 +115,32 @@ A simple plugin to save favorite files that are not part of a project. It suppor
 ### [GlueViews](http://www.youtube.com/watch?v=ChXgMR-9eCE)
 A text command which takes multiple views and enables an event listener to monitor them. If the visible region of the active view changes, the other views get moved by the same amount either up or down.
 
-Development
-----------
-see [Sublime Info - Information about Sublime Text 2](http://sublimetext.info/)
+Deprecated Plugins
+------------------
+### [Flakes](https://github.com/ePages-rnd/sublimetext-epages-flakes)
+Basic functionality for working with virtual machines running epages on unix and windows, e.g.
+
+* Open file (e.g. copy template debugging comment -> strg+shift+o in Sublime Text -> opens file on your system).
+* Restart app server.
+* Restart perl.
+* Set JSDebugLevel.
+* Import and delete XMLs.
+* Import and delete hook XMLs.
+* Perl::Critic.
+* Perl syntax check.
+* Javascript syntax check.
+* Perl organize imports.
+* Correct permissions.
+* Ctags perl (Linux only, requires ctags plugin).
+* ...
+
+### [QuickCVS](https://github.com/ePages-rnd/sublimetext-quickcvs)
+Runs **cvs** on your console and prints output to Sublime Text console.
+
+* Status
+* Diff
+* Update
+* Get Clean Copy
+* Commit
+* Status and branch in status bar
+* ...
