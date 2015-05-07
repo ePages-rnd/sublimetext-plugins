@@ -1,7 +1,7 @@
 sublimetext-plugins
 =================
 
-[Sublime Text 2](http://www.sublimetext.com/2) / [3](http://www.sublimetext.com/3) plugins that may allow you to have a better workflow.
+[Sublime Text 3](http://www.sublimetext.com/3) plugins that may allow you to have a better workflow. Please note that Sublime Text 2 isn't supported by this plugin.
 
 *Don't know why you want to use [Sublime Text](http://www.sublimetext.com) and don't like reading? [Watch these videos](https://tutsplus.com/course/improve-workflow-in-sublime-text-2/).*
 
